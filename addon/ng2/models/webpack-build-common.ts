@@ -58,6 +58,9 @@ export function getWebpackCommonConfig(projectRoot: string, sourceDir: string) {
         { test: /\.html$/, loader: 'raw-loader' }
       ]
     },
+    sassLoader: {
+      includePaths: [path.resolve(projectRoot, './src/styles')]
+    }
     plugins: [
       new ForkCheckerPlugin(),
       new HtmlWebpackPlugin({
